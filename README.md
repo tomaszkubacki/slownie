@@ -1,5 +1,5 @@
 # slownie
-[![Build Status](https://drone.io/github.com/sunglim/csp_fixer/status.png)](https://drone.io/github.com/sunglim/csp_fixer/latest)
+[![Build Status](https://drone.io/github.com/tomaszkubacki/slownie/status.png)](https://drone.io/github.com/tomaszkubacki/slownie/latest)
 
 slownie is numbers to words converter in polish. It's a port of this [PHP version][PHP version]
 
