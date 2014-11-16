@@ -1,0 +1,5 @@
+name: slownie
+author: Tomasz Kubacki
+description: numbers to words converter in polish
+dev_dependencies:
+  unittest: '>=0.11.0+4'
