@@ -155,7 +155,7 @@ String slownie(String liczba) {
 
   if (wej.startsWith("-")) {
     wej = wej.substring(1, wej.length);
-    wyj += slowa[0][0].toString() + " ";
+    wyj += slowa[0].toString() + " ";
   }
   if (wej == '0') {
     wyj = slowa[1][0].toString();

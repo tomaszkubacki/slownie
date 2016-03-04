@@ -1,6 +1,6 @@
 library slownie.test;
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 import 'package:slownie/slownie.dart';
 
