@@ -2,6 +2,8 @@ name: slownie
 author: Tomasz Kubacki <tomasz.kubacki@gmail.com>
 description: numbers to words converter in polish
 homepage: https://github.com/tomaszkubacki/slownie
-version: 0.2.0
+version: 0.3.0
+environment:
+  sdk: '>=2.1.0 <3.0.0'
 dev_dependencies:
-  test: ">=0.12.0 <0.13.0"
+  test: any

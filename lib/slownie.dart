@@ -1,8 +1,8 @@
 library slownie;
 
-final slowa = [
-  'minus',
- 
+final List<List<String>> slowa = [
+  ['minus'],
+
   [
     'zero',
     'jeden',
@@ -14,7 +14,7 @@ final slowa = [
     'siedem',
     'osiem',
     'dziewięć'],
- 
+
   [
     'dziesięć',
     'jedenaście',
@@ -26,7 +26,7 @@ final slowa = [
     'siedemnaście',
     'osiemnaście',
     'dziewiętnaście'],
- 
+
   [
     'dziesięć',
     'dwadzieścia',
@@ -37,7 +37,7 @@ final slowa = [
     'siedemdziesiąt',
     'osiemdziesiąt',
     'dziewięćdziesiąt'],
- 
+
   [
     'sto',
     'dwieście',
@@ -48,72 +48,72 @@ final slowa = [
     'siedemset',
     'osiemset',
     'dziewięćset'],
- 
+
   [
     'tysiąc',
     'tysiące',
     'tysięcy'],
- 
+
   [
     'milion',
     'miliony',
     'milionów'],
- 
+
   [
     'miliard',
     'miliardy',
     'miliardów'],
- 
+
   [
     'bilion',
     'biliony',
     'bilionów'],
- 
+
   [
     'biliard',
     'biliardy',
     'biliardów'],
- 
+
   [
     'trylion',
     'tryliony',
     'trylionów'],
- 
+
   [
     'tryliard',
     'tryliardy',
     'tryliardów'],
- 
+
   [
     'kwadrylion',
     'kwadryliony',
     'kwadrylionów'],
- 
+
   [
     'kwintylion',
     'kwintyliony',
     'kwintylionów'],
- 
+
   [
     'sekstylion',
     'sekstyliony',
     'sekstylionów'],
- 
+
   [
     'septylion',
     'septyliony',
     'septylionów'],
- 
+
   [
     'oktylion',
     'oktyliony',
     'oktylionów'],
- 
+
   [
     'nonylion',
     'nonyliony',
     'nonylionów'],
- 
+
   [
     'decylion',
     'decyliony',
@@ -155,7 +155,7 @@ String slownie(String liczba) {
 
   if (wej.startsWith("-")) {
     wej = wej.substring(1, wej.length);
-    wyj += slowa[0].toString() + " ";
+    wyj += slowa[0][0].toString() + " ";
   }
   if (wej == '0') {
     wyj = slowa[1][0].toString();
