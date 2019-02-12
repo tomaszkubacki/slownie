@@ -63,7 +63,7 @@ final List<List<String>> slowa = [
   ['nonylion', 'nonyliony', 'nonylionów'],
   ['decylion', 'decyliony', 'decylionów']
 ];
-/// convert input numeral wej to polish number in words
+/// convert input number [wej] to polish number in words
 String liczba_na_tekst_do_tysiaca(int wej) {
   String wynik = '';
   var j = wej.abs();
@@ -90,7 +90,7 @@ String liczba_na_tekst_do_tysiaca(int wej) {
     wynik += slowa[1][jednosci].toString() + " ";
   return wynik;
 }
-/// convert input text liczba with arabic numerals in text to polish number in words
+/// convert input text [liczba] with arabic numerals in text to polish number in words
 String slownie(String liczba) {
   String wej = liczba.trim();
   String wyj = '';

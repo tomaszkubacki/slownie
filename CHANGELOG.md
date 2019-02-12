@@ -1,3 +1,9 @@
+## 0.3.1
+
+### DartDocs
+
+* added dartdocs and formatted code with dartfmt
+
 ## 0.3
 
 ### Dart 2.x
