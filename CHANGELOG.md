@@ -1,3 +1,9 @@
+## 0.3.2
+
+### DartDocs
+
+* added example
+
 ## 0.3.1
 
 ### DartDocs
