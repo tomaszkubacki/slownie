@@ -6,7 +6,6 @@ import 'package:slownie/slownie.dart';
 
 main() {
   group('jeden do dziesięć tysięcy ', () {
-
     test('do tysiąca', () {
       expect(slownie("1"), "jeden");
       expect(slownie("2"), "dwa");
@@ -17,7 +16,7 @@ main() {
       expect(slownie("7"), "siedem");
       expect(slownie("8"), "osiem");
       expect(slownie("9"), "dziewięć");
-      
+
       expect(slownie("10"), "dziesięć");
       expect(slownie("11"), "jedenaście");
       expect(slownie("12"), "dwanaście");
@@ -1010,8 +1009,5 @@ main() {
       expect(slownie("999"), "dziewięćset dziewięćdziesiąt dziewięć");
       expect(slownie("1000"), "tysiąc");
     });
-    
-    
-    
   });
 }

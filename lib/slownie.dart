@@ -2,7 +2,6 @@ library slownie;
 
 final List<List<String>> slowa = [
   ['minus'],
-
   [
     'zero',
     'jeden',
@@ -13,8 +12,8 @@ final List<List<String>> slowa = [
     'sześć',
     'siedem',
     'osiem',
-    'dziewięć'],
-
+    'dziewięć'
+  ],
   [
     'dziesięć',
     'jedenaście',
@@ -25,8 +24,8 @@ final List<List<String>> slowa = [
     'szesnaście',
     'siedemnaście',
     'osiemnaście',
-    'dziewiętnaście'],
-
+    'dziewiętnaście'
+  ],
   [
     'dziesięć',
     'dwadzieścia',
@@ -36,8 +35,8 @@ final List<List<String>> slowa = [
     'sześćdziesiąt',
     'siedemdziesiąt',
     'osiemdziesiąt',
-    'dziewięćdziesiąt'],
-
+    'dziewięćdziesiąt'
+  ],
   [
     'sto',
     'dwieście',
@@ -47,82 +46,25 @@ final List<List<String>> slowa = [
     'sześćset',
     'siedemset',
     'osiemset',
-    'dziewięćset'],
-
-  [
-    'tysiąc',
-    'tysiące',
-    'tysięcy'],
-
-  [
-    'milion',
-    'miliony',
-    'milionów'],
-
-  [
-    'miliard',
-    'miliardy',
-    'miliardów'],
-
-  [
-    'bilion',
-    'biliony',
-    'bilionów'],
-
-  [
-    'biliard',
-    'biliardy',
-    'biliardów'],
-
-  [
-    'trylion',
-    'tryliony',
-    'trylionów'],
-
-  [
-    'tryliard',
-    'tryliardy',
-    'tryliardów'],
-
-  [
-    'kwadrylion',
-    'kwadryliony',
-    'kwadrylionów'],
-
-  [
-    'kwintylion',
-    'kwintyliony',
-    'kwintylionów'],
-
-  [
-    'sekstylion',
-    'sekstyliony',
-    'sekstylionów'],
-
-  [
-    'septylion',
-    'septyliony',
-    'septylionów'],
-
-  [
-    'oktylion',
-    'oktyliony',
-    'oktylionów'],
-
-  [
-    'nonylion',
-    'nonyliony',
-    'nonylionów'],
-
-  [
-    'decylion',
-    'decyliony',
-    'decylionów']
+    'dziewięćset'
+  ],
+  ['tysiąc', 'tysiące', 'tysięcy'],
+  ['milion', 'miliony', 'milionów'],
+  ['miliard', 'miliardy', 'miliardów'],
+  ['bilion', 'biliony', 'bilionów'],
+  ['biliard', 'biliardy', 'biliardów'],
+  ['trylion', 'tryliony', 'trylionów'],
+  ['tryliard', 'tryliardy', 'tryliardów'],
+  ['kwadrylion', 'kwadryliony', 'kwadrylionów'],
+  ['kwintylion', 'kwintyliony', 'kwintylionów'],
+  ['sekstylion', 'sekstyliony', 'sekstylionów'],
+  ['septylion', 'septyliony', 'septylionów'],
+  ['oktylion', 'oktyliony', 'oktylionów'],
+  ['nonylion', 'nonyliony', 'nonylionów'],
+  ['decylion', 'decyliony', 'decylionów']
 ];
-
-
+/// convert input numeral wej to polish number in words
 String liczba_na_tekst_do_tysiaca(int wej) {
-
   String wynik = '';
   var j = wej.abs();
 
@@ -144,12 +86,12 @@ String liczba_na_tekst_do_tysiaca(int wej) {
     }
   }
 
-  if (jednosci > 0 && dziesiatki != 1) wynik += slowa[1][jednosci].toString() + " ";
+  if (jednosci > 0 && dziesiatki != 1)
+    wynik += slowa[1][jednosci].toString() + " ";
   return wynik;
 }
-
+/// convert input text liczba with arabic numerals in text to polish number in words
 String slownie(String liczba) {
-
   String wej = liczba.trim();
   String wyj = '';
 
@@ -185,7 +127,9 @@ String slownie(String liczba) {
       if (liczba > 0) if (i == 0) {
         wyj += liczba_na_tekst_do_tysiaca(liczba);
       } else {
-        wyj += (liczba > 1 ? liczba_na_tekst_do_tysiaca(liczba) : '') + odmiana(slowa[4 + i], liczba) + ' ';
+        wyj += (liczba > 1 ? liczba_na_tekst_do_tysiaca(liczba) : '') +
+            odmiana(slowa[4 + i], liczba) +
+            ' ';
       }
     }
   }
@@ -193,13 +137,13 @@ String slownie(String liczba) {
   return wyj.trim();
 }
 
-
 String odmiana(List odmiany, int liczba) {
   var txt = odmiany[2];
   if (liczba == 1) txt = odmiany[0];
   var liczbaTekst = liczba.toString();
   num jednosci = int.parse(liczbaTekst[liczbaTekst.length - 1]);
   num reszta = liczba % 100;
-  if ((jednosci > 1 && jednosci < 5) && !(reszta > 10 && reszta < 20)) txt = odmiany[1];
+  if ((jednosci > 1 && jednosci < 5) && !(reszta > 10 && reszta < 20))
+    txt = odmiany[1];
   return txt;
 }
