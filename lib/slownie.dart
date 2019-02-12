@@ -1,6 +1,6 @@
 library slownie;
 
-final List<List<String>> slowa = [
+final List<List<String>> _slowa = [
   ['minus'],
   [
     'zero',
@@ -63,12 +63,13 @@ final List<List<String>> slowa = [
   ['nonylion', 'nonyliony', 'nonylionów'],
   ['decylion', 'decyliony', 'decylionów']
 ];
+
 /// convert input number [wej] to polish number in words
 String liczba_na_tekst_do_tysiaca(int wej) {
   String wynik = '';
   var j = wej.abs();
 
-  if (j == 0) return slowa[1][0].toString();
+  if (j == 0) return _slowa[1][0].toString();
 
   int jednosci = j % 10;
 
@@ -76,20 +77,21 @@ String liczba_na_tekst_do_tysiaca(int wej) {
 
   int setki = (j - dziesiatki * 10 - jednosci) ~/ 100;
 
-  if (setki > 0) wynik += slowa[4][setki - 1].toString() + " ";
+  if (setki > 0) wynik += _slowa[4][setki - 1].toString() + " ";
 
   if (dziesiatki > 0) {
     if (dziesiatki == 1) {
-      wynik += slowa[2][jednosci].toString() + " ";
+      wynik += _slowa[2][jednosci].toString() + " ";
     } else {
-      wynik += slowa[3][dziesiatki - 1].toString() + " ";
+      wynik += _slowa[3][dziesiatki - 1].toString() + " ";
     }
   }
 
   if (jednosci > 0 && dziesiatki != 1)
-    wynik += slowa[1][jednosci].toString() + " ";
+    wynik += _slowa[1][jednosci].toString() + " ";
   return wynik;
 }
+
 /// convert input text [liczba] with arabic numerals in text to polish number in words
 String slownie(String liczba) {
   String wej = liczba.trim();
@@ -97,10 +99,10 @@ String slownie(String liczba) {
 
   if (wej.startsWith("-")) {
     wej = wej.substring(1, wej.length);
-    wyj += slowa[0][0].toString() + " ";
+    wyj += _slowa[0][0].toString() + " ";
   }
   if (wej == '0') {
-    wyj = slowa[1][0].toString();
+    wyj = _slowa[1][0].toString();
   } else {
     int z = wej.length - 1;
     List input = new List();
@@ -128,7 +130,7 @@ String slownie(String liczba) {
         wyj += liczba_na_tekst_do_tysiaca(liczba);
       } else {
         wyj += (liczba > 1 ? liczba_na_tekst_do_tysiaca(liczba) : '') +
-            odmiana(slowa[4 + i], liczba) +
+            _odmiana(_slowa[4 + i], liczba) +
             ' ';
       }
     }
@@ -137,7 +139,7 @@ String slownie(String liczba) {
   return wyj.trim();
 }
 
-String odmiana(List odmiany, int liczba) {
+String _odmiana(List odmiany, int liczba) {
   var txt = odmiany[2];
   if (liczba == 1) txt = odmiany[0];
   var liczbaTekst = liczba.toString();
